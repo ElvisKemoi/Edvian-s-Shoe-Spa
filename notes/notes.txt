@@ -1,0 +1,77 @@
+
+const productStructure = `
+<div class="showcase">
+
+<div class="showcase-banner">
+<img src="${allProducts[0].images[0]}" width="300" class="product-img default">
+<img src="${
+	allProducts[0].images[1]
+}" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+
+<p class="showcase-badge">-${calculatePercentageDiscount(
+	allProducts[0].price,
+	allProducts[0].pricewas
+)}%</p>
+
+<div class="showcase-actions">
+  <button class="btn-action">
+    <ion-icon name="heart-outline"></ion-icon>
+  </button>
+
+  <button class="btn-action addToCart" id="${allProducts[0].id}">
+    <ion-icon name="bag-add-outline"></ion-icon>
+    
+	</button>
+	</div>
+</div>
+
+<div class="showcase-content">
+<a href="#" class="showcase-category">${allProducts[0].category}</a>
+
+<a href="#">
+  <h3 class="showcase-title">
+    ${allProducts[0].title}
+  </h3>
+</a>
+
+<div class="showcase-rating">
+<ion-icon name="star"></ion-icon>
+<ion-icon name="star"></ion-icon>
+<ion-icon name="star"></ion-icon>
+<ion-icon name="star-outline"></ion-icon>
+<ion-icon name="star-outline"></ion-icon>
+</div>
+
+<div class="price-box">
+<p class="price">Ksh ${allProducts[0].price}</p>
+<del>Ksh ${allProducts[0].pricewas}</del>
+</div>
+</div>
+
+</div>
+
+`;
+
+
+function calculatePercentageDiscount(currentPrice, previousPrice) {
+	if (currentPrice <= 0 || previousPrice <= 0) {
+		throw new Error("Prices must be positive numbers.");
+	}
+	return Math.round(((previousPrice - currentPrice) / previousPrice) * 100);
+}
+
+
+
+
+function findByKey(array, key, value) {
+	return array.find((obj) => obj[key] === value);
+}
+
+
+function checkCart(cart) {
+	if (cart.length === 0) {
+		checkoutBtn.classList.add("invisible");
+	} else {
+		checkoutBtn.classList.remove("invisible");
+	}
+}
