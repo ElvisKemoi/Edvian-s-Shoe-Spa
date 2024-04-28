@@ -2787,3 +2787,10 @@ footer {
 	background-color: var(--bittersweet);
 	border-radius: 10px;
 }
+.montserrat {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	color: var(--bittersweet);
+}

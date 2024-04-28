@@ -12,13 +12,6 @@
 /* // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 900 */
 
-.montserrat {
-	font-family: "Montserrat", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 500;
-	font-style: normal;
-}
-
 :root {
 	/**
    * colors
@@ -70,10 +63,6 @@
    */
 
 	--transition-timing: 0.2s ease;
-}
-
-.bg-warning {
-	background-color: var(--bittersweet);
 }
 
 /*-----------------------------------*\
@@ -3446,4 +3435,13 @@ footer {
 
 	/* Spacing */
 	margin: 10px;
+}
+
+.montserrat {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	color: var(--bittersweet);
+	text-decoration: underline overline;
 }

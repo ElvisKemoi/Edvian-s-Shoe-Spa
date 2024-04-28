@@ -152,8 +152,8 @@ const allProducts = [
 		price: 2000,
 		rating: 9,
 		images: [
-			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,black.jpg",
 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,black2.jpg",
+			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,black3.jpg",
 		],
 		sizes: [39, 40, 41, 42, 43, 44, 45],
 		category: "Mens",
@@ -486,9 +486,9 @@ allProducts.forEach((product) => {
 	</div>
 	
 	<div class="showcase-content">
-	<a href="#" class="showcase-category">${product.category}</a>
+	<a  class="showcase-category">${product.category}</a>
 	
-	<a href="#">
+	<a >
 		<h3 class="showcase-title">
 		${product.title}
 		</h3>
@@ -516,12 +516,11 @@ const checkoutBtn = document.getElementById("checkoutBtn");
 const addToCartButtons = document.querySelectorAll(".addToCart");
 
 //TODO1. INSERTING AN ITEM INTO THE CART ARRAY
-
 addToCartButtons.forEach((btn) => {
 	btn.addEventListener("click", () => {
-		let toCart = btn.id;
-
+		const toCart = btn.id;
 		const alreadyInCart = cart.some((item) => item.id === toCart);
+
 		updateCartCount(cart);
 
 		if (!alreadyInCart) {
@@ -531,7 +530,7 @@ addToCartButtons.forEach((btn) => {
 				updateCart(cart);
 
 				Swal.fire({
-					title: `${productToAdd.title}  `,
+					title: `${productToAdd.title}`,
 					text: "Added to your cart!",
 					imageUrl: `${productToAdd.images[0]}`,
 					imageWidth: 150,
@@ -543,9 +542,11 @@ addToCartButtons.forEach((btn) => {
 				console.log("Product added to cart:", productToAdd);
 			} else {
 				console.log("Product not found.");
+				// Potential improvement: Notify the user that the product is not available.
 			}
 		} else {
 			console.log("Product is already in the cart.");
+			// Potential improvement: Notify the user that the product is already in the cart.
 		}
 		console.table(cart);
 	});
