@@ -89,7 +89,7 @@
 							Cancel
 						</button>
 						<button class="card" id="confirmBtn" type="submit" >
-							Confirm
+							Place Order
 						</button>
 					</form>
 					
@@ -98,6 +98,16 @@
 				</nav>
 				</div>
 				<div class="service-container" style="display: flex; justify-content: center;">
+					<a href="#" class="service-item">
+						<div class="service-icon">
+							<ion-icon name="call-outline" role="img" class="md hydrated" aria-label="call outline"></ion-icon>
+						</div>
+
+						<div class="service-content">
+							<h3 class="service-title">Order Confirmation Call </h3>
+							<p class="service-desc">Best Online Support</p>
+						</div>
+					</a>
 					<a href="#" class="service-item">
 						<div class="service-icon">
 							<ion-icon name="boat-outline" role="img" class="md hydrated" aria-label="boat outline"></ion-icon>
@@ -120,16 +130,7 @@
 						</div>
 					</a>
 
-					<a href="#" class="service-item">
-						<div class="service-icon">
-							<ion-icon name="call-outline" role="img" class="md hydrated" aria-label="call outline"></ion-icon>
-						</div>
-
-						<div class="service-content">
-							<h3 class="service-title">Best Online Support</h3>
-							<p class="service-desc">Wait for Confirmation Call</p>
-						</div>
-					</a>
+					
 
 					<a href="#" class="service-item">
 						<div class="service-icon">
@@ -230,7 +231,7 @@
     - HEADER
   -->
 
-		<header>
+		<header id="header">
 			<div class="header-top">
 				<div class="container">
 					<ul class="header-social-container">
@@ -282,15 +283,10 @@
 
 			<div class="header-main">
 				<div class="container">
-					<a href="#" class="header-logo">
-						<!-- <img
-							src="./assets/images/logo/logo.svg"
-							alt="Anon's logo"
-							width="120"
-							height="36"
-						/> -->
+					
+					
             <h1 class="montserrat">Edvian's Shoe Spa</h1>
-					 </a> 
+					 
 
 					<div class="header-search-container">
 						<input
@@ -310,10 +306,7 @@
 							<ion-icon name="person-outline"></ion-icon>
 						</button>
 
-						<!-- <button class="action-btn">
-							<ion-icon name="heart-outline"></ion-icon>
-							<span class="count">0</span>
-						</button> -->
+					
 
 						<button class="action-btn">
 							<ion-icon name="bag-handle-outline"></ion-icon>
@@ -437,25 +430,19 @@
 			</nav>
 
 			<div class="mobile-bottom-navigation">
+				
 				<button class="action-btn" data-mobile-menu-open-btn>
 					<ion-icon name="menu-outline"></ion-icon>
-				</button>
+					
+					</button>
 
-				<!-- <button class="action-btn">
-					<ion-icon name="bag-handle-outline"></ion-icon>
-
-					<span class="count">0</span>
-				</button> -->
-
+				
 				<button class="action-btn">
-					<ion-icon name="home-outline"></ion-icon>
+					<a href="#header" class="reset">
+						<ion-icon name="home-outline"></ion-icon>
+					</a>
 				</button>
-
-				<!-- <button class="action-btn">
-					<ion-icon name="heart-outline"></ion-icon>
-
-					<span class="count">0</span>
-				</button> -->
+			
 
 				<button class="action-btn" data-mobile-menu-open-btn>
 					<ion-icon name="bag-handle-outline"></ion-icon>
