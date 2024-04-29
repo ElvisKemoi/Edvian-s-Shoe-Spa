@@ -34,7 +34,124 @@
 	</head>
 
 	<body>
-		<div class="overlay" data-overlay></div>
+		<div class="offcanvas">
+			<div class="offcanvas-content">
+				<button class="close-btn" onclick="cancelConfirmation()">&times;</button>
+				<nav>
+						<h2 class="montserrat">Confirm Order</h2>
+					
+					
+						<ul class="card">
+						<h3 style="color: var(--bittersweet);">Cart</h3>
+						<table class="product-table">
+							
+						</table>
+				
+					</ul>
+						<ul class="card">
+						<h3 style="color:var(--bittersweet);">Your Details </h3>
+						<table class="userDetailsTable ">
+					
+							<tbody>
+								<form action="">
+							<tr>
+								<td><label for="fullName">Full Name: </label></td>
+								<td><input type="text" name="fullName" required id="fullName"></td>
+							
+							</tr>
+							<tr>
+								<td><label for="userEmail">Email Address: </label></td>
+								<td><input type="email" name="userEmail" required id="userEmail"></td>
+							</tr>
+							<tr>
+							<td><label for="phoneNumber">Phone Number: </label> </td>
+							<td><input type="tel" name="phoneNumber" required id="phoneNumber"> </td>
+							</tr>
+							<tr>
+							<td><label for="deliveryLocation">Your Location: </label> </td>
+							<td><input type="text" name="deliveryLocation" required placeholder="Eg: Utawala,Nairobi" id="deliveryLocation"> </td>
+
+							</tr>
+							</tbody>
+						
+							<tfoot>
+								<tr>
+									<td  class="montserrat">Total Billed: </td>
+								
+									<td id="CartTotal"></td>
+								</tr>
+							</tfoot>
+						</table>
+				
+					</ul>
+					<ul style="display:flex;justify-content: center; text-align: center; gap:0 2rem ;">
+						<button class="card" id="cancelBtn" onclick="cancelConfirmation()" >
+							Cancel
+						</button>
+						<button class="card" id="confirmBtn" type="submit" >
+							Confirm
+						</button>
+					</form>
+					
+					</ul>
+					
+				</nav>
+				</div>
+				<div class="service-container" style="display: flex; justify-content: center;">
+					<a href="#" class="service-item">
+						<div class="service-icon">
+							<ion-icon name="boat-outline" role="img" class="md hydrated" aria-label="boat outline"></ion-icon>
+						</div>
+
+						<div class="service-content">
+							<h3 class="service-title">Pay On Delivery</h3>
+							<p class="service-desc">Order Around Nairobi</p>
+						</div>
+					</a>
+
+					<a href="#" class="service-item">
+						<div class="service-icon">
+							<ion-icon name="rocket-outline" role="img" class="md hydrated" aria-label="rocket outline"></ion-icon>
+						</div>
+
+						<div class="service-content">
+							<h3 class="service-title">Next Day delivery</h3>
+							<p class="service-desc">Nairobi Orders Only</p>
+						</div>
+					</a>
+
+					<a href="#" class="service-item">
+						<div class="service-icon">
+							<ion-icon name="call-outline" role="img" class="md hydrated" aria-label="call outline"></ion-icon>
+						</div>
+
+						<div class="service-content">
+							<h3 class="service-title">Best Online Support</h3>
+							<p class="service-desc">Wait for Confirmation Call</p>
+						</div>
+					</a>
+
+					<a href="#" class="service-item">
+						<div class="service-icon">
+							<ion-icon name="arrow-undo-outline" role="img" class="md hydrated" aria-label="arrow undo outline"></ion-icon>
+						</div>
+
+						<div class="service-content">
+							<h3 class="service-title">Return Policy</h3>
+							<p class="service-desc">Easy &amp; Free Return</p>
+						</div>
+					</a>
+
+					
+				</div>
+			</div>
+			
+			
+		
+		
+		<div class="overlay" data-overlay>
+		</div>
+	
 
 		<!--
     - MODAL
@@ -356,7 +473,6 @@
 						<ion-icon name="close-outline"></ion-icon>
 					</button>
 				</div>
-
 				<ul class="mobile-menu-category-list">
 					<li class="menu-category">
 						<a href="#" class="menu-title">Home</a>

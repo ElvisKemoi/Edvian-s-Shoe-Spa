@@ -463,8 +463,10 @@ allProducts.forEach((product) => {
 	<div class="showcase">
 	
 	<div class="showcase-banner">
-	<img src="${product.images[0]}" width="300" class="product-img default">
-	<img src="${
+	<img loading="lazy" src="${
+		product.images[0]
+	}" width="300" class="product-img default">
+	<img loading="lazy" src="${
 		product.images[1]
 	}" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
 	
@@ -512,7 +514,6 @@ allProducts.forEach((product) => {
 	`;
 });
 
-const checkoutBtn = document.getElementById("checkoutBtn");
 const addToCartButtons = document.querySelectorAll(".addToCart");
 
 //TODO1. INSERTING AN ITEM INTO THE CART ARRAY
@@ -533,22 +534,29 @@ addToCartButtons.forEach((btn) => {
 					title: `${productToAdd.title}`,
 					text: "Added to your cart!",
 					imageUrl: `${productToAdd.images[0]}`,
+					timer: 2000,
+					timerProgressBar: true,
+
 					imageWidth: 150,
 					imageHeight: 150,
 					imageAlt: "Custom image",
 				});
 
 				updateCartCount(cart);
-				console.log("Product added to cart:", productToAdd);
 			} else {
-				console.log("Product not found.");
-				// Potential improvement: Notify the user that the product is not available.
+				Swal.fire({
+					title: "Product Not Found!",
+					timer: 2000,
+					timerProgressBar: true,
+				});
 			}
 		} else {
-			console.log("Product is already in the cart.");
-			// Potential improvement: Notify the user that the product is already in the cart.
+			Swal.fire({
+				title: "Product is already in the cart!",
+				timer: 2000,
+				timerProgressBar: true,
+			});
 		}
-		console.table(cart);
 	});
 });
 
@@ -567,72 +575,63 @@ function calculatePercentageDiscount(currentPrice, previousPrice) {
 
 //TODO3. UPDATING THE CART DISPLAY
 async function updateCart(cart1) {
-	cartDisplay.innerHTML = "";
+	cartDisplay.innerHTML = ``;
 
-	cart1.forEach((car) => {
+	cart1.forEach((car, index) => {
+		let sizeOptions = `<option value="" style="background-color:red;">Pick a size</option>`; // Add the default "Pick a size" option
+		sizeOptions += car.sizes
+			.map((size) => `<option value="${size}">${size}</option>`)
+			.join(""); // Add other size options
 		cartDisplay.innerHTML =
 			cartDisplay.innerHTML +
 			`<li class="sidebar-menu-category card">
-		<button class="sidebar-accordion-menu active" data-accordion-btn>
-			<div class="menu-title-flex">
-				<img src="${car.images[0]}" alt="clothes" width="100" height="100" class="menu-title-img">
-		
-				<p class="menu-title">Ksh ${car.price} </p>
-			</div>
-		
-			<div>
-				<ion-icon name="add-outline" class="add-icon md hydrated" role="img" aria-label="add outline"></ion-icon>
-				<ion-icon name="remove-outline" class="remove-icon md hydrated" role="img" aria-label="remove outline"></ion-icon>
-			</div>
-		</button>
-		
-		<ul class="sidebar-submenu-category-list active my-3" data-accordion>
-			<li class="sidebar-submenu-category">
-				<a href="#" class="sidebar-submenu-title">
-					<p class="product-name">${car.title}</p>
-				
-				</a>
-			</li>
-			<li class="sidebar-submenu-category">
-				<a href="#" class="sidebar-submenu-title">
-					<p>Price</p>
-		<p>Ksh ${car.price}</p>
-				</a>
-			</li>
-			<li class="sidebar-submenu-category">
-				<a class="sidebar-submenu-title">
-					<p>Size</p>
-		<select name="Size" id="shoeSize">
-		<option value="" style="background-color:red;">Pick a size</option>
-		<option value="37">37</option>
-		<option value="38">38</option>
-		<option value="39">39</option>
-		<option value="40">40</option>
-		<option value="41">41</option>
-		<option value="42">42</option>
-		</select>
-				</a>
-			</li>
-		<li class="sidebar-submenu-category " style="margin:.9rem;">
-				<a href="#" class="sidebar-submenu-title">
+				<button class="sidebar-accordion-menu active" data-accordion-btn>
+					<div class="menu-title-flex">
+						<img src="${car.images[0]}" alt="clothes" width="100" height="100" class="menu-title-img">
+						<p class="menu-title">Ksh ${car.price} </p>
+					</div>
+					<div>
+						<ion-icon name="add-outline" class="add-icon md hydrated" role="img" aria-label="add outline"></ion-icon>
+						<ion-icon name="remove-outline" class="remove-icon md hydrated" role="img" aria-label="remove outline"></ion-icon>
+					</div>
+				</button>
+				<ul class="sidebar-submenu-category-list active my-3" data-accordion>
+					<li class="sidebar-submenu-category">
+						<a href="#" class="sidebar-submenu-title">
+							<p class="product-name">${car.title}</p>
+						</a>
+					</li>
 					
-				
-		<button class=" bg-warning remove" id="${car.id}">Remove</button>
-		
-				</a>
-			</li>
-		</ul>
-		</li>`;
+					<li class="sidebar-submenu-category">
+						<a class="sidebar-submenu-title">
+							<p>Size</p>
+							
+							<form class="sizeForms">
+
+							<select name="${car.id}" class="shoeSize">${sizeOptions}</select>
+							</form>
+							
+						</a>
+					</li>
+					<li class="sidebar-submenu-category" style="margin:.9rem;">
+						<a  class="sidebar-submenu-title">
+							<button class="bg-warning remove" id="${car.id}">Remove</button>
+						</a>
+					</li>
+				</ul>
+			</li>`;
 	});
+
 	cartDisplay.innerHTML =
 		cartDisplay.innerHTML +
-		`<li id="checkoutBtn" class="sidebar-menu-category bg-warning " >
-			<p >Checkout </p>
-	</li>`;
+		`<li id="checkoutBtn" class="sidebar-menu-category bg-warning">
+			<p>Checkout</p>
+			
+		</li>`;
 
 	addCartTogglers();
-
 	rmFrmCart(document.querySelectorAll(".remove"), cart1);
+	cartCheckout(cart1);
 }
 
 //TODO2. REMOVING AN ITEM INTO THE CART ARRAY
@@ -642,8 +641,12 @@ function rmFrmCart(items, arr) {
 		rmBtn.addEventListener("click", () => {
 			cart = arr.filter((item) => item.id !== rmBtn.id);
 			updateCart(cart);
+			Swal.fire({
+				title: "Product was removed from your cart!",
+				timer: 2000,
+				timerProgressBar: true,
+			});
 			updateCartCount(cart);
-			console.log(cart);
 		});
 	});
 }
@@ -676,8 +679,140 @@ function updateCartCount(cart) {
 	if (cartCountElement1 && cartCountElement2) {
 		cartCountElement1.textContent = cart.length;
 		cartCountElement2.textContent = cart.length;
-		console.log("Cart count updated: ", cart.length);
 	} else {
 		console.error("One or both cart count elements not found");
 	}
+}
+
+function cartCheckout(cart) {
+	const checkoutBtn = document.getElementById("checkoutBtn");
+	checkoutBtn.addEventListener("click", () => {
+		if (cart.length === 0) {
+			Swal.fire({
+				icon: "error",
+				title: "Oops... You can't complete the purchase!",
+				text: "Your Cart is empty!",
+			});
+		} else {
+			const allFormValues = getAllFormValues();
+			if (allFormValues.length !== 0) {
+				// Iterate over cart
+				const newArray1 = cart.map((item) => {
+					// Find the corresponding object in allFormValues based on the id
+					const correspondingObj = allFormValues.find((obj) => obj[item.id]);
+
+					// Append the value to the item in cart
+					const size = correspondingObj ? correspondingObj[item.id] : null;
+					return { ...item, size };
+				});
+				displayLastStage(newArray1);
+			} else {
+				Swal.fire({
+					title: "Please select a shoe size!",
+					timer: 2000,
+					timerProgressBar: true,
+				});
+			}
+		}
+	});
+}
+
+function getAllFormValues() {
+	const forms = document.querySelectorAll(".sizeForms");
+	const allFormValues = [];
+	const emptyValues = [];
+
+	// Cache length to avoid reevaluation in loop
+	const formsLength = forms.length;
+
+	for (let i = 0; i < formsLength; i++) {
+		const form = forms[i];
+		const formData = new FormData(form);
+		const emptyFormValues = {};
+		const formValues = {};
+		let hasEmptyValue = false; // Flag to check if empty values exist
+
+		for (const [name, value] of formData.entries()) {
+			// Check if value is empty or whitespace
+			if (!value.trim()) {
+				emptyFormValues[name] = value;
+				hasEmptyValue = true;
+			}
+			formValues[name] = value;
+		}
+
+		allFormValues.push(formValues);
+
+		if (hasEmptyValue) {
+			emptyValues.push({ id: form.id, values: emptyFormValues });
+		}
+	}
+
+	if (emptyValues.length !== 0) {
+		Swal.fire({
+			title: "Please select a shoe size!",
+			timer: 2000,
+			timerProgressBar: true,
+		});
+	} else {
+		return allFormValues.filter(
+			(form) => !emptyValues.some((emptyForm) => emptyForm.id === form.id)
+		);
+	}
+
+	return [];
+}
+
+function displayLastStage(cart) {
+	const productTable = document.querySelector(".product-table");
+	productTable.innerHTML = "";
+
+	const createTableHeader = () => {
+		const tHead = document.createElement("thead");
+		tHead.innerHTML = `<tr>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Description</th>
+			<th>Size</th>
+		</tr>`;
+		return tHead;
+	};
+
+	const createTableBody = () => {
+		const tBody = document.createElement("tbody");
+		cart.forEach((item) => {
+			const row = document.createElement("tr");
+			row.innerHTML = `<td>${item.title}</td><td>Ksh ${item.price}</td><td>${item.color}</td><td>${item.size}</td>`;
+			tBody.appendChild(row);
+		});
+		return tBody;
+	};
+
+	const createTableFooter = () => {
+		const tFoot = document.createElement("tfoot");
+		const tFootTr = document.createElement("tr");
+
+		const calculateTotalPrice = (arr) => {
+			return arr
+				.map((item) => Number(item.price)) // Convert price values to numbers
+				.reduce((acc, curr) => acc + curr, 0); // Calculate sum
+		};
+
+		const totalPrice = calculateTotalPrice(cart);
+		tFootTr.innerHTML = `<td class="montserrat">Totals</td><td id="CartTotal ">Ksh &nbsp;${totalPrice}</td>`;
+		tFoot.appendChild(tFootTr);
+		document.querySelectorAll("#CartTotal").forEach((item) => {
+			item.innerHTML = `Ksh ${totalPrice}`;
+		});
+		return tFoot;
+	};
+
+	productTable.appendChild(createTableHeader());
+	productTable.appendChild(createTableBody());
+	productTable.appendChild(createTableFooter());
+
+	console.log(cart);
+
+	// document.querySelector(".open-btn").click();
+	document.querySelector(".offcanvas").classList.add("active");
 }
