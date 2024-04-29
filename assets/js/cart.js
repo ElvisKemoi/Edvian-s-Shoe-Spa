@@ -516,7 +516,7 @@ allProducts.forEach((product) => {
 
 const addToCartButtons = document.querySelectorAll(".addToCart");
 
-//TODO1. INSERTING AN ITEM INTO THE CART ARRAY
+//1. INSERTING AN ITEM INTO THE CART ARRAY
 addToCartButtons.forEach((btn) => {
 	btn.addEventListener("click", () => {
 		const toCart = btn.id;
@@ -573,7 +573,7 @@ function calculatePercentageDiscount(currentPrice, previousPrice) {
 	return Math.round(((previousPrice - currentPrice) / previousPrice) * 100);
 }
 
-//TODO3. UPDATING THE CART DISPLAY
+//3. UPDATING THE CART DISPLAY
 async function updateCart(cart1) {
 	cartDisplay.innerHTML = ``;
 
@@ -634,7 +634,7 @@ async function updateCart(cart1) {
 	cartCheckout(cart1);
 }
 
-//TODO2. REMOVING AN ITEM INTO THE CART ARRAY
+//2. REMOVING AN ITEM INTO THE CART ARRAY
 
 function rmFrmCart(items, arr) {
 	items.forEach((rmBtn) => {
