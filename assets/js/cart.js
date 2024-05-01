@@ -120,7 +120,7 @@ const allProducts = [
 	},
 	{
 		id: "prod9",
-		title: "NoName",
+		title: "Steve Madden Brookee Sneaker",
 		price: 2000,
 		rating: 9,
 		images: [
@@ -133,8 +133,8 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro10",
-		title: "NoName",
+		id: "prod10",
+		title: "Steve Madden Brookee Sneaker",
 		price: 2000,
 		rating: 9,
 		images: [
@@ -147,7 +147,7 @@ const allProducts = [
 		color: "white",
 	},
 	{
-		id: "pro11",
+		id: "prod11",
 		title: "Quality double sole Skater vans",
 		price: 2000,
 		rating: 9,
@@ -161,7 +161,7 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro12",
+		id: "prod12",
 		title: "Quality double sole Skater vans",
 		price: 2000,
 		rating: 9,
@@ -175,7 +175,7 @@ const allProducts = [
 		color: "blakc-blue",
 	},
 	{
-		id: "pro13",
+		id: "prod13",
 		title: "Quality double sole Skater vans",
 		price: 2000,
 		rating: 9,
@@ -189,7 +189,7 @@ const allProducts = [
 		color: "blue",
 	},
 	{
-		id: "pro14",
+		id: "prod14",
 		title: "Quality double sole Skater vans",
 		price: 2000,
 		rating: 9,
@@ -202,22 +202,9 @@ const allProducts = [
 		pricewas: 2300,
 		color: "red",
 	},
+
 	{
-		id: "pro15",
-		title: "Quality double sole Skater vans",
-		price: 2000,
-		rating: 9,
-		images: [
-			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,red.jpg",
-			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,red.jpg",
-		],
-		sizes: [39, 40, 41, 42, 43, 44, 45],
-		category: "Mens",
-		pricewas: 2300,
-		color: "red",
-	},
-	{
-		id: "pro16",
+		id: "prod15",
 		title: "Quality Open wedge",
 		price: 1950,
 		rating: 9,
@@ -231,7 +218,7 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro17",
+		id: "prod16",
 		title: "Quality Open wedge",
 		price: 1950,
 		rating: 9,
@@ -245,7 +232,7 @@ const allProducts = [
 		color: "blue",
 	},
 	{
-		id: "pro18",
+		id: "prod17",
 		title: "Quality Open wedge",
 		price: 1950,
 		rating: 9,
@@ -259,7 +246,7 @@ const allProducts = [
 		color: "cream",
 	},
 	{
-		id: "pro19",
+		id: "prod18",
 		title: "Quality Open wedge",
 		price: 1950,
 		rating: 9,
@@ -273,7 +260,7 @@ const allProducts = [
 		color: "leopardpattern",
 	},
 	{
-		id: "pro20",
+		id: "prod21",
 		title: "Strapped leather sandals",
 		price: 1900,
 		rating: 9,
@@ -287,7 +274,7 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro21",
+		id: "prod22",
 		title: "Strapped leather sandals",
 		price: 1900,
 		rating: 9,
@@ -301,7 +288,7 @@ const allProducts = [
 		color: "brown",
 	},
 	{
-		id: "pro22",
+		id: "prod23",
 		title: "Strapped leather sandals",
 		price: 1900,
 		rating: 9,
@@ -315,7 +302,7 @@ const allProducts = [
 		color: "cream",
 	},
 	{
-		id: "pro23",
+		id: "prod24",
 		title: "Strapped leather sandals",
 		price: 1900,
 		rating: 9,
@@ -329,7 +316,7 @@ const allProducts = [
 		color: "green",
 	},
 	{
-		id: "pro24",
+		id: "prod25",
 		title: "Sued Loafers",
 		price: 2500,
 		rating: 9,
@@ -343,7 +330,7 @@ const allProducts = [
 		color: "blue",
 	},
 	{
-		id: "pro25",
+		id: "prod26",
 		title: "Sued Loafers",
 		price: 2500,
 		rating: 9,
@@ -357,7 +344,7 @@ const allProducts = [
 		color: "grey",
 	},
 	{
-		id: "pro26",
+		id: "prod27",
 		title: "Tommy Hilliger sneakers",
 		price: 2050,
 		rating: 9,
@@ -371,7 +358,7 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro27",
+		id: "prod28",
 		title: "Tommy Hilliger sneakers",
 		price: 2050,
 		rating: 9,
@@ -385,7 +372,7 @@ const allProducts = [
 		color: "blue",
 	},
 	{
-		id: "pro28",
+		id: "prod29",
 		title: "Tommy Hilliger sneakers",
 		price: 2050,
 		rating: 9,
@@ -399,7 +386,7 @@ const allProducts = [
 		color: "red",
 	},
 	{
-		id: "pro29",
+		id: "prod30",
 		title: "Tommy Hilliger sneakers",
 		price: 2050,
 		rating: 9,
@@ -413,7 +400,7 @@ const allProducts = [
 		color: "white",
 	},
 	{
-		id: "pro30",
+		id: "prod31",
 		title: "Vip Men's Sneakers",
 		price: 2000,
 		rating: 9,
@@ -427,7 +414,7 @@ const allProducts = [
 		color: "black",
 	},
 	{
-		id: "pro31",
+		id: "prod32",
 		title: "Vip Men's Sneakers",
 		price: 2000,
 		rating: 9,
@@ -441,7 +428,7 @@ const allProducts = [
 		color: "grey",
 	},
 	{
-		id: "pro32",
+		id: "prod33",
 		title: "Vip Men's Sneakers",
 		price: 2000,
 		rating: 9,
@@ -811,8 +798,121 @@ function displayLastStage(cart) {
 	productTable.appendChild(createTableBody());
 	productTable.appendChild(createTableFooter());
 
-	console.log(cart);
+	// console.log(cart);
 
 	// document.querySelector(".open-btn").click();
 	document.querySelector(".offcanvas").classList.add("active");
+	getOrderDetails(cart);
+}
+
+function getOrderDetails(cart) {
+	const confirmButton = document.querySelector("#confirmBtn");
+	confirmButton.addEventListener("click", function (event) {
+		event.preventDefault(); // Prevent the default behavior of the button
+
+		const fullNameInput = document.querySelector('input[name="fullName"]');
+		const userEmailInput = document.querySelector('input[name="userEmail"]');
+		const phoneNumberInput = document.querySelector(
+			'input[name="phoneNumber"]'
+		);
+		const deliveryLocationInput = document.querySelector(
+			'input[name="deliveryLocation"]'
+		);
+
+		// Check if all inputs are present and have values
+		if (
+			fullNameInput &&
+			userEmailInput &&
+			phoneNumberInput &&
+			deliveryLocationInput &&
+			fullNameInput.value &&
+			userEmailInput.value &&
+			phoneNumberInput.value &&
+			deliveryLocationInput.value
+		) {
+			const orderDetails = {
+				name: fullNameInput.value,
+				email: userEmailInput.value,
+				phone: phoneNumberInput.value,
+				location: deliveryLocationInput.value,
+				items: cart,
+			};
+
+			// Call a function to handle the retrieved order details
+			handleOrderDetails(orderDetails);
+		} else {
+			// Handle error if any input is missing or empty
+			console.error("Some input fields are missing or empty.");
+		}
+	});
+}
+
+// Define a function to handle the retrieved order details
+function handleOrderDetails(details) {
+	const productList = details.items
+		.map(function (item) {
+			return (
+				"<tr><td>" +
+				item.id +
+				"</td><td>" +
+				item.title +
+				"</td><td>" +
+				item.price +
+				"</td><td>" +
+				item.size +
+				"</td><td>" +
+				item.color +
+				"</td></tr>"
+			);
+		})
+		.join("");
+
+	let bodyMessage =
+		"<strong>Full Name:</strong> " +
+		details.name +
+		"<br>" +
+		"<strong>Email:</strong> " +
+		details.email +
+		"<br>" +
+		"<strong>Phone Number:</strong> " +
+		details.phone +
+		"<br>" +
+		"<strong>Location:</strong> " +
+		details.location +
+		"<br>" +
+		"<strong>Order Details:</strong><table border='1' style='width: 100%'>" +
+		"<tr><th>ID</th><th>Title</th><th>Price</th><th>Size</th><th>Color</th></tr>" +
+		productList +
+		"</table>";
+	sendMail(bodyMessage);
+}
+
+function sendMail(bodyMessage) {
+	Email.send({
+		SecureToken: "df049fb6-5228-4d18-a432-82c77d326ff6",
+		To: "austinealex369@gmail.com",
+		From: "austinealex369@gmail.com",
+		Subject: "New Order",
+
+		Body: bodyMessage,
+	}).then((message) => {
+		cancelConfirmation();
+
+		if (message === "OK") {
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title:
+					"Message sent successfully! Confirmation will be sent to your email.",
+				showConfirmButton: false,
+				timer: 2000,
+			});
+		} else {
+			Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Something went wrong!",
+			});
+		}
+	});
 }
