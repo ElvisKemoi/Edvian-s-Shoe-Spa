@@ -10,6 +10,7 @@ Welcome to **Edvian's Shoe Spa**! This is an e-commerce website dedicated to sel
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Lumiz_Pascal](#Lumiz_Pascal)
 - [License](#license)
 - [Contact](#contact)
 
@@ -74,7 +75,7 @@ We welcome contributions from the community! To contribute:
    ```
 5. Open a pull request.
 
-## LUMIZ PASCAL
+## Lumiz_Pascal
 
 1. All the products are held in an array of objects. Each object has the id, title, price, rating, images, sizes, category, pricewas and color of each item. Here you can change each detail of the item on display.
    NB:// (pricewas) is the initial price assuming that there was a discount imposed on the item.
