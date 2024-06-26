@@ -27,7 +27,9 @@ Welcome to **Edvian's Shoe Spa**! This is an e-commerce website dedicated to sel
 
 ## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript, React
+This is just a beginner friendly frontend project.
+
+- Frontend: HTML, CSS, JavaScript.
 
 ## Installation
 
@@ -41,10 +43,6 @@ To run this project locally, follow these steps:
 
    ```sh
    cd edvians-shoe-spa
-   ```
-
-   ```
-
    ```
 
 ## Usage
@@ -79,6 +77,7 @@ We welcome contributions from the community! To contribute:
 ## LUMIZ PASCAL
 
 1. All the products are held in an array of objects. Each object has the id, title, price, rating, images, sizes, category, pricewas and color of each item. Here you can change each detail of the item on display.
+   NB:// (pricewas) is the initial price assuming that there was a discount imposed on the item.
    ![Edvian's Shoe Spa](/Learning%20Images/image.png)
 
 2. The routes to the images that are on display are held in the images array in each object in the allProducts array. You will have to change these routes to show where the new images have been saved.
