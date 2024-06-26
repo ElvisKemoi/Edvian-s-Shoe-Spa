@@ -81,7 +81,11 @@ We welcome contributions from the community! To contribute:
 1. All the products are held in an array of objects. Each object has the id, title, price, rating, images, sizes, category, pricewas and color of each item. Here you can change each detail of the item on display.
    ![Edvian's Shoe Spa](/Learning%20Images/image.png)
 
-2. Images that are on display are held in the images array in the objects found in the allProducts array.
+2. The routes to the images that are on display are held in the images array in each object in the allProducts array. You will have to change these routes to show where the new images have been saved.
+   ![Edvian's Shoe Spa](/Learning%20Images/image%20copy.png)
+3. Create a secure token that will send the email from your smtp server provider for example elastic email [elastic email](https://app.elasticemail.com/).
+   ![Edvian's Shoe Spa](/Learning%20Images/image%20copy%202.png)
+4. Contact me for more information about smtp servers.
 
 ## License
 
@@ -89,7 +93,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact us at [edviansshoespa@example.com](mailto:edviansshoespa@example.com).
+If you have any questions or suggestions, feel free to contact me.
 
 ---
 

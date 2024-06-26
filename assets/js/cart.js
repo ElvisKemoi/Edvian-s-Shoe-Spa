@@ -887,12 +887,18 @@ function handleOrderDetails(details) {
 	sendMail(bodyMessage);
 }
 
+//SENDING THE ACTUAL EMAIL USING SMTP SERVERS
+const secureToken = ""; //create a secure token from your smtp server provider
+const to = ""; // insert email that you created the smtp server with
+const from = ""; // same as (to) above ;
+const subject = "New Order";
+
 function sendMail(bodyMessage) {
 	Email.send({
-		SecureToken: "df049fb6-5228-4d18-a432-82c77d326ff6",
-		To: "austinealex369@gmail.com",
-		From: "austinealex369@gmail.com",
-		Subject: "New Order",
+		SecureToken: secureToken,
+		To: to,
+		From: from,
+		Subject: subject,
 
 		Body: bodyMessage,
 	}).then((message) => {
