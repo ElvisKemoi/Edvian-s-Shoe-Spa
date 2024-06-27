@@ -2,6 +2,12 @@
 
 Welcome to **Edvian's Shoe Spa**! This is an e-commerce website dedicated to selling a variety of shoes. Our goal is to provide an easy and enjoyable shopping experience for all shoe lovers.
 
+## Project Images
+
+![Edvian's Shoe Spa](/Project%20Images/image.png)
+![Edvian's Shoe Spa](/Project%20Images/image%20copy.png)
+![Edvian's Shoe Spa](/Project%20Images/image%20copy%202.png)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
