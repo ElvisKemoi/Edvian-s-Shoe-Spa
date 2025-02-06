@@ -4,9 +4,9 @@ Welcome to **Edvian's Shoe Spa**! This is an e-commerce website dedicated to sel
 
 ## Project Images
 
-![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Project%20Images/image.png)
-![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Project%20Images/image%20copy.png)
-![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Project%20Images/image%20copy%202.png)
+![Edvian's Shoe Spa](/public/Project%20Images/image.png)
+![Edvian's Shoe Spa](/public/Project%20Images/image%20copy.png)
+![Edvian's Shoe Spa](/public/Project%20Images/image%20copy%202.png)
 
 ## Table of Contents
 
@@ -85,12 +85,12 @@ We welcome contributions from the community! To contribute:
 
 1. All the products are held in an array of objects. Each object has the id, title, price, rating, images, sizes, category, pricewas and color of each item. Here you can change each detail of the item on display.
    NB:// (pricewas) is the initial price assuming that there was a discount imposed on the item.
-   ![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Learning%20Images/image.png)
+   ![Edvian's Shoe Spa](/public/Learning%20Images/image.png)
 2. Create a new folder in the root of your project for the images that you would wish to insert in the website and rename to whatever you want.
 3. The routes to the images that are on display are held in the images array in each object in the allProducts array. You will have to change these routes to show where the new images have been saved.
-   ![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Learning%20Images/image%20copy.png)
+   ![Edvian's Shoe Spa](/public/Learning%20Images/image%20copy.png)
 4. Create a secure token that will send the email from your smtp server provider for example elastic email [elastic email](https://app.elasticemail.com/).
-   ![Edvian's Shoe Spa](/Edvian-s-Shoe-Spa/public/Learning%20Images/image%20copy%202.png)
+   ![Edvian's Shoe Spa](/public/Learning%20Images/image%20copy%202.png)
 5. Contact me for more information about smtp servers.
 
 ## License
