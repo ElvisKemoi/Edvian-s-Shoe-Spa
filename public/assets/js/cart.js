@@ -4,445 +4,6 @@ const cartDisplay = document.getElementById("cart");
 // ? Cart functionality
 let cart = [];
 
-// ?All Products
-// const allProducts = [
-// 	{
-// 		id: "prod1",
-// 		title: "Airforce Shadow Restocked",
-// 		price: 2700,
-// 		rating: 9,
-// 		images: [
-// 			"./shoeImages/Airforce Shadow Restocked,size37to41,price27000,colorful.jpg",
-// 			"./shoeImages/Airforce Shadow Restocked,size37to41,price27000,colorful2.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 3000,
-// 		color: "colorful",
-// 	},
-// 	{
-// 		id: "prod2",
-// 		title: "Airforce Shadow Restocked",
-// 		price: 2700,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Airforce Shadow Restocked,size37to41,price27000,pink.jpg",
-// 			"/shoeImages/Airforce Shadow Restocked,size37to41,price27000,pink2.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 3000,
-// 		color: "pink",
-// 	},
-// 	{
-// 		id: "prod3",
-// 		title: "Airmax 95",
-// 		price: 3800,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Airmax 95,size40to45,price38000,black2.jpg",
-// 			"/shoeImages/Airmax 95,size40to45,price38000,black3.jpg",
-// 		],
-// 		sizes: [40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 4000,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod4",
-// 		title: "Airmax 95",
-// 		price: 3800,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Airmax 95,size40to45,price38000,colorful.jpg",
-// 			"/shoeImages/Airmax 95,size40to45,price38000,colorful2.jpg",
-// 		],
-// 		sizes: [40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 4000,
-// 		color: "grey-blue",
-// 	},
-// 	{
-// 		id: "prod5",
-// 		title: "Ladies Boots",
-// 		price: 2150,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Ladies Boots,size37to42,price2150,black2.jpg",
-// 			"/shoeImages/Ladies Boots,size37to42,price2150,black.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42],
-// 		category: "Womens",
-// 		pricewas: 2500,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod6",
-// 		title: "Ladies Boots",
-// 		price: 2150,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Ladies Boots,size37to42,price2150,brown.jpg",
-// 			"/shoeImages/Ladies Boots,size37to42,price2150,blackbrown.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42],
-// 		category: "Womens",
-// 		pricewas: 2500,
-// 		color: "brown",
-// 	},
-// 	{
-// 		id: "prod7",
-// 		title: "NB_Sneakers Restocked fully",
-// 		price: 2500,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/NB_Sneakers Restocked fully,size39-44,price2500,brown.jpg",
-// 			"/shoeImages/NB_Sneakers Restocked fully,size39-44,price2500,brown2.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44],
-// 		category: "Mens",
-// 		pricewas: 2800,
-// 		color: "white-brown",
-// 	},
-// 	{
-// 		id: "prod8",
-// 		title: "NB_Sneakers Restocked fully",
-// 		price: 2500,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/NB_Sneakers Restocked fully,size39-44,price2500,brownblack.jpg",
-// 			"/shoeImages/NB_Sneakers Restocked fully,size39-44,price2500,brownblack.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44],
-// 		category: "Mens",
-// 		pricewas: 2800,
-// 		color: "white-brown",
-// 	},
-// 	{
-// 		id: "prod9",
-// 		title: "Steve Madden Brookee Sneaker",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/NoName,Size36to41,price2000,womens,black.jpg",
-// 			"/shoeImages/NoName,Size36to41,price2000,womens,black.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44],
-// 		category: "Womens",
-// 		pricewas: 2400,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod10",
-// 		title: "Steve Madden Brookee Sneaker",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/NoName,Size36to41,price2000,womens,white,2.jpg",
-// 			"/shoeImages/NoName,Size36to41,price2000,womens,white,3.jpg",
-// 		],
-// 		sizes: [36, 37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 2400,
-// 		color: "white",
-// 	},
-// 	{
-// 		id: "prod11",
-// 		title: "Quality double sole Skater vans",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,black2.jpg",
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,black3.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 2300,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod12",
-// 		title: "Quality double sole Skater vans",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,blackblue.jpg",
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,blackblue2.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 2300,
-// 		color: "blakc-blue",
-// 	},
-// 	{
-// 		id: "prod13",
-// 		title: "Quality double sole Skater vans",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,blue.jpg",
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,blue.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 2300,
-// 		color: "blue",
-// 	},
-// 	{
-// 		id: "prod14",
-// 		title: "Quality double sole Skater vans",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,red.jpg",
-// 			"/shoeImages/Quality double sole Skater vans,size39to45,price2000,red.jpg",
-// 		],
-// 		sizes: [39, 40, 41, 42, 43, 44, 45],
-// 		category: "Mens",
-// 		pricewas: 2300,
-// 		color: "red",
-// 	},
-
-// 	{
-// 		id: "prod15",
-// 		title: "Quality Open wedge",
-// 		price: 1950,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,black.jpg",
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,black.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod16",
-// 		title: "Quality Open wedge",
-// 		price: 1950,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,blue.jpg",
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,blue.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "blue",
-// 	},
-// 	{
-// 		id: "prod17",
-// 		title: "Quality Open wedge",
-// 		price: 1950,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,cream.jpg",
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,cream.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "cream",
-// 	},
-// 	{
-// 		id: "prod18",
-// 		title: "Quality Open wedge",
-// 		price: 1950,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,leopardpattern.jpg",
-// 			"/shoeImages/Quality Open wedge,size37to43,price1950,leopardpattern.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "leopardpattern",
-// 	},
-// 	{
-// 		id: "prod21",
-// 		title: "Strapped leather sandals",
-// 		price: 1900,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,black.jpg",
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,black.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2000,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod22",
-// 		title: "Strapped leather sandals",
-// 		price: 1900,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,brown.jpg",
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,brown.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2000,
-// 		color: "brown",
-// 	},
-// 	{
-// 		id: "prod23",
-// 		title: "Strapped leather sandals",
-// 		price: 1900,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,cream.jpg",
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,cream.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2000,
-// 		color: "cream",
-// 	},
-// 	{
-// 		id: "prod24",
-// 		title: "Strapped leather sandals",
-// 		price: 1900,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,green.jpg",
-// 			"/shoeImages/Strapped leather sandals,size37to42,price1900,green.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42, 43],
-// 		category: "Womens",
-// 		pricewas: 2000,
-// 		color: "green",
-// 	},
-// 	{
-// 		id: "prod25",
-// 		title: "Sued Loafers",
-// 		price: 2500,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Sued Loafers,size37to42,price25000,darkblue.jpg",
-// 			"/shoeImages/Sued Loafers,size37to42,price25000,darkblue.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42],
-// 		category: "Womens",
-// 		pricewas: 2700,
-// 		color: "blue",
-// 	},
-// 	{
-// 		id: "prod26",
-// 		title: "Sued Loafers",
-// 		price: 2500,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Sued Loafers,size37to42,price25000,grey.jpg",
-// 			"/shoeImages/Sued Loafers,size37to42,price25000,grey.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41, 42],
-// 		category: "Womens",
-// 		pricewas: 2700,
-// 		color: "grey",
-// 	},
-// 	{
-// 		id: "prod27",
-// 		title: "Tommy Hilliger sneakers",
-// 		price: 2050,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,black.jpg",
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,black.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod28",
-// 		title: "Tommy Hilliger sneakers",
-// 		price: 2050,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,blue.jpg",
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,blue.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "blue",
-// 	},
-// 	{
-// 		id: "prod29",
-// 		title: "Tommy Hilliger sneakers",
-// 		price: 2050,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,red.jpg",
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,red.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "red",
-// 	},
-// 	{
-// 		id: "prod30",
-// 		title: "Tommy Hilliger sneakers",
-// 		price: 2050,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,white.jpg",
-// 			"/shoeImages/Tommy Hilliger sneakers,size37to41,price2050,white.jpg",
-// 		],
-// 		sizes: [37, 38, 39, 40, 41],
-// 		category: "Womens",
-// 		pricewas: 2200,
-// 		color: "white",
-// 	},
-// 	{
-// 		id: "prod31",
-// 		title: "Vip Men's Sneakers",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,black.jpg",
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,black.jpg",
-// 		],
-// 		sizes: [40, 41, 42, 43, 44],
-// 		category: "Mens",
-// 		pricewas: 2250,
-// 		color: "black",
-// 	},
-// 	{
-// 		id: "prod32",
-// 		title: "Vip Men's Sneakers",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,grey.jpg",
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,grey.jpg",
-// 		],
-// 		sizes: [40, 41, 42, 43, 44],
-// 		category: "Mens",
-// 		pricewas: 2250,
-// 		color: "grey",
-// 	},
-// 	{
-// 		id: "prod33",
-// 		title: "Vip Men's Sneakers",
-// 		price: 2000,
-// 		rating: 9,
-// 		images: [
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,beige.jpg",
-// 			"/shoeImages/Vip Men's Sneakers,size40to44,price2000,beige.jpg",
-// 		],
-// 		sizes: [40, 41, 42, 43, 44],
-// 		category: "Mens",
-// 		pricewas: 2250,
-// 		color: "beige",
-// 	},
-// ];
-
 // Fetch all products from backend
 const fetchAllProducts = async () => {
 	const response = await fetch("/products/all");
@@ -881,8 +442,13 @@ function getOrderDetails(cart) {
 
 // Define a function to handle the retrieved order details
 function handleOrderDetails(details) {
+	let orderProducts = [];
 	const productList = details.items
 		.map(function (item) {
+			orderProducts = [
+				...orderProducts,
+				{ item: item._id, quantity: 1, price: item.price },
+			];
 			return (
 				"<tr><td>" +
 				item.id +
@@ -916,7 +482,23 @@ function handleOrderDetails(details) {
 		"<tr><th>ID</th><th>Title</th><th>Price</th><th>Size</th><th>Color</th></tr>" +
 		productList +
 		"</table>";
-	sendMail(bodyMessage);
+	// sendMail(bodyMessage);
+	const totalPrice = (arr) => {
+		const sum = arr.reduce(
+			(accumulator, currentValue) => accumulator + currentValue.price,
+			0
+		);
+		return sum;
+	};
+	const thesum = totalPrice(orderProducts);
+
+	createOrder(
+		orderProducts,
+		document.querySelector('input[name="fullName"]').value,
+		document.querySelector('input[name="userEmail"]').value,
+		document.querySelector('input[name="deliveryLocation"]').value,
+		thesum
+	);
 }
 
 //SENDING THE ACTUAL EMAIL USING SMTP SERVERS
@@ -949,8 +531,77 @@ function sendMail(bodyMessage) {
 			Swal.fire({
 				icon: "error",
 				title: "Oops...",
-				text: "Something went wrong!",
+				text: "Something went wrong! 3",
 			});
 		}
 	});
 }
+
+async function createOrder(
+	products,
+	customerName,
+	customerEmail,
+	customerLocation,
+	totalPrice
+) {
+	try {
+		const response = await fetch("/order/new", {
+			method: "POST",
+			body: JSON.stringify({
+				products,
+				customerName,
+				customerEmail,
+				customerLocation,
+				totalPrice,
+			}),
+			headers: { "Content-Type": "application/json" },
+		});
+		if (!response.ok) {
+			throw new Error("Network response was not ok");
+		}
+
+		const data = await response.json();
+		if (!data.success) {
+			throw new Error(data.error);
+		}
+		document.querySelector(".offcanvas").classList.remove("active");
+		await Swal.fire({
+			position: "center",
+			icon: "success",
+			title:
+				"Order Created Successfully! Details will be sent to your email " +
+				data.data.customerEmail,
+			showConfirmButton: false,
+		});
+	} catch (error) {
+		Swal.fire({
+			icon: "error",
+			title: "Oops...",
+			text: "Something went wrong!" + error.message,
+		});
+	}
+}
+// Test data for createOrder function
+const testProducts = [
+	{
+		item: "67a484f2cbe678815a189df8",
+		quantity: 1,
+	},
+	{
+		item: "67a484f2cbe678815a189df9",
+		quantity: 1,
+	},
+];
+const testCustomerName = "John Doe";
+const testCustomerEmail = "john.doe@example.com";
+const testCustomerLocation = "123 Main St, Anytown, USA";
+const testTotalPrice = 5400;
+
+// Call the createOrder function with test data
+// createOrder(
+// 	testProducts,
+// 	testCustomerName,
+// 	testCustomerEmail,
+// 	testCustomerLocation,
+// 	testTotalPrice
+// );
