@@ -78,52 +78,51 @@ for (let i = 0; i < accordionBtn.length; i++) {
 function cancelConfirmation() {
 	document.querySelector(".offcanvas").classList.remove("active");
 }
-const newsletterForm = document.getElementById("newsletterForm");
-const newsletterEmailInput = document.getElementById("newsletterEmail");
+// const newsletterForm = document.getElementById("newsletterForm");
+// const newsletterEmailInput = document.getElementById("newsletterEmail");
 
-newsletterForm.addEventListener("submit", async (e) => {
-	try {
-		e.preventDefault();
-		const newsletterEmail = newsletterEmailInput.value.trim();
+// newsletterForm.addEventListener("submit", async (e) => {
+// 	try {
+// 		e.preventDefault();
+// 		const newsletterEmail = newsletterEmailInput.value.trim();
 
-		// Basic email validation
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		if (!newsletterEmail || !emailRegex.test(newsletterEmail)) {
-			await Swal.fire({
-				icon: "error",
-				title: "Oops...",
-				text: "Please enter a valid email address!",
-			});
-			return;
-		}
+// 		// Basic email validation
+// 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// 		if (!newsletterEmail || !emailRegex.test(newsletterEmail)) {
+// 			await Swal.fire({
+// 				icon: "error",
+// 				title: "Oops...",
+// 				text: "Please enter a valid email address!",
+// 			});
+// 			return;
+// 		}
 
-		const response = await fetch("/newsletter/add", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ email: newsletterEmail }),
-		});
+// 		const response = await fetch("/newsletter/add", {
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 			},
+// 			body: JSON.stringify({ email: newsletterEmail }),
+// 		});
 
-		const responseData = await response.json().catch(() => null);
-
-		if (response.ok && responseData?.success) {
-			await Swal.fire({
-				position: "center",
-				icon: "success",
-				title: "Subscription successful! Check your email for confirmation.",
-				showConfirmButton: false,
-				timer: 2000,
-			});
-			newsletterEmailInput.value = ""; // Clear input after success
-		} else {
-			throw new Error(responseData?.error || "An unexpected error occurred!");
-		}
-	} catch (error) {
-		await Swal.fire({
-			icon: "error",
-			title: "Oops...",
-			text: `Something went wrong! ${error.message}`,
-		});
-	}
-});
+// 		const responseData = await response.json().catch(() => null);
+// 		if (response.ok && responseData?.success) {
+// 			await Swal.fire({
+// 				position: "center",
+// 				icon: "success",
+// 				title: "Subscription successful! Check your email for confirmation.",
+// 				showConfirmButton: false,
+// 				timer: 2000,
+// 			});
+// 			newsletterEmailInput.value = ""; // Clear input after success
+// 		} else {
+// 			throw new Error(responseData?.error || "An unexpected error occurred!");
+// 		}
+// 	} catch (error) {
+// 		await Swal.fire({
+// 			icon: "error",
+// 			title: "Oops...",
+// 			text: `Something went wrong! ${error.message}`,
+// 		});
+// 	}
+// });
