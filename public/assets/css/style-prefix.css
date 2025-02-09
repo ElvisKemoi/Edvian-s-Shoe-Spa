@@ -262,8 +262,8 @@ body::-webkit-scrollbar-thumb:hover {
 	visibility: hidden;
 	pointer-events: none;
 	z-index: 10;
-	-webkit-animation: popup 1s ease-in-out 5s forwards;
-	animation: popup 1s ease-in-out 5s forwards;
+	/* -webkit-animation: popup 1s ease-in-out 5s forwards;
+	animation: popup 1s ease-in-out 5s forwards; */
 }
 
 @-webkit-keyframes popup {
