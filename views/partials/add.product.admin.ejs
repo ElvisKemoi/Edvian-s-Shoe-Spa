@@ -1,0 +1,86 @@
+<form
+	action="/products/add-product"
+	method="POST"
+	enctype="multipart/form-data"
+>
+	<div class="mb-3">
+		<label for="title" class="form-label">Title</label>
+		<input type="text" class="form-control" id="title" name="title" required />
+	</div>
+
+	<div class="mb-3">
+		<label for="pricewas" class="form-label">Original Price (Price Was)</label>
+		<input
+			type="number"
+			class="form-control"
+			id="pricewas"
+			name="pricewas"
+			required
+		/>
+	</div>
+
+	<div class="mb-3">
+		<label for="price" class="form-label">Price (Selling Price)</label>
+		<input
+			type="number"
+			class="form-control"
+			id="price"
+			name="price"
+			required
+		/>
+	</div>
+	<div class="mb-3">
+		<label for="images" class="form-label">Product Images</label>
+		<input
+			type="file"
+			class="form-control"
+			id="images"
+			name="images"
+			multiple
+			required
+			accept="image/*"
+			max="2"
+		/>
+	</div>
+	<script>
+		const inputFile = document.getElementById("images");
+		const maxFiles = 2; // Set the maximum number of files
+
+		inputFile.addEventListener("change", () => {
+			if (inputFile.files.length > maxFiles) {
+				alert(`You can only upload a maximum of ${maxFiles} files.`);
+				inputFile.value = ""; // Clear the input field
+			}
+		});
+	</script>
+
+	<div class="mb-3">
+		<label for="sizes" class="form-label">Sizes</label>
+		<input
+			type="text"
+			class="form-control"
+			id="sizes"
+			name="sizes"
+			placeholder="Enter sizes separated by commas (e.g., 30, 32, 34)"
+			required
+		/>
+	</div>
+
+	<div class="mb-3">
+		<label for="category" class="form-label">Category</label>
+		<input
+			type="text"
+			class="form-control"
+			id="category"
+			name="category"
+			required
+		/>
+	</div>
+
+	<div class="mb-3">
+		<label for="color" class="form-label">Color</label>
+		<input type="text" class="form-control" id="color" name="color" required />
+	</div>
+
+	<button type="submit" class="btn btn-primary w-100">Add Product</button>
+</form>

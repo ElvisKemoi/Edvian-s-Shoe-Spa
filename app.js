@@ -5,7 +5,10 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
-
+var session = require("express-session");
+var passport = require("passport");
+var LocalStrategy = require("passport-local");
+var User = require("./models/users.model");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var productRouter = require("./routes/products.routes");
@@ -14,6 +17,7 @@ var newsletterRouter = require("./routes/newsletter.routes");
 
 var connectDb = require("./config/database.config");
 var addTest = require("./temp/insert.products");
+var testUser = require("./config/testuser.config");
 var app = express();
 var port = process.env.PORT;
 
@@ -27,6 +31,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		resave: false,
+		saveUninitialized: true,
+		cookie: {
+			maxAge: 30 * 60 * 1000,
+		},
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport config
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
