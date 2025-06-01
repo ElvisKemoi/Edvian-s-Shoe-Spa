@@ -39,202 +39,15 @@
 			}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	</head>
 	
 
 	<body>
-		<div class="offcanvas">
-			<div class="offcanvas-content">
-				<button class="close-btn" onclick="cancelConfirmation()">&times;</button>
-				<nav>
-						<h2 class="montserrat">Confirm Order</h2>
-					
-					
-						<ul class="card">
-						<h3 style="color: var(--bittersweet);">Cart</h3>
-						<table class="product-table">
-							
-						</table>
-				
-					</ul>
-						<ul class="card">
-						<h3 style="color:var(--bittersweet);">Your Details </h3>
-						<table class="userDetailsTable ">
-					
-							<tbody>
-								<form action="">
-							<tr>
-								<td><label for="fullName">Full Name: </label></td>
-								<td><input type="text" name="fullName" required id="fullName"></td>
-							
-							</tr>
-							<tr>
-								<td><label for="userEmail">Email Address: </label></td>
-								<td><input type="email" name="userEmail" required id="userEmail"></td>
-							</tr>
-							<tr>
-							<td><label for="phoneNumber">Phone Number: </label> </td>
-							<td><input type="tel" name="phoneNumber" required id="phoneNumber"> </td>
-							</tr>
-							<tr>
-							<td><label for="deliveryLocation">Your Location: </label> </td>
-							<td><input type="text" name="deliveryLocation" required placeholder="Eg: Utawala,Nairobi" id="deliveryLocation"> </td>
-
-							</tr>
-							</tbody>
-						
-							<tfoot>
-								<tr>
-									<td  class="montserrat">Total Billed: </td>
-								
-									<td id="CartTotal"></td>
-								</tr>
-							</tfoot>
-						</table>
-				
-					</ul>
-					<ul style="display:flex;justify-content: center; text-align: center; gap:0 2rem ;">
-					</form>
-						<button class="card" id="cancelBtn" onclick="cancelConfirmation()" >
-							Cancel
-						</button>
-						<button class="card" id="confirmBtn"  >
-							Place Order
-						</button>
-					
-					</ul>
-					
-				</nav>
-				</div>
-				
-				<div class="service-container" style="display: flex; justify-content: center;">
-					<a href="#" class="service-item">
-						<div class="service-icon">
-							<ion-icon name="call-outline" role="img" class="md hydrated" aria-label="call outline"></ion-icon>
-						</div>
-
-						<div class="service-content">
-							<h3 class="service-title">Order Confirmation Call </h3>
-							<p class="service-desc">Best Online Support</p>
-						</div>
-					</a>
-					<a href="#" class="service-item">
-						<div class="service-icon">
-							<ion-icon name="boat-outline" role="img" class="md hydrated" aria-label="boat outline"></ion-icon>
-						</div>
-
-						<div class="service-content">
-							<h3 class="service-title">Pay On Delivery</h3>
-							<p class="service-desc">Order Around Nairobi</p>
-						</div>
-					</a>
-
-					<a href="#" class="service-item">
-						<div class="service-icon">
-							<ion-icon name="rocket-outline" role="img" class="md hydrated" aria-label="rocket outline"></ion-icon>
-						</div>
-
-						<div class="service-content">
-							<h3 class="service-title">Next Day delivery</h3>
-							<p class="service-desc">Nairobi Orders Only</p>
-						</div>
-					</a>
-
-					
-
-					<a href="#" class="service-item">
-						<div class="service-icon">
-							<ion-icon name="arrow-undo-outline" role="img" class="md hydrated" aria-label="arrow undo outline"></ion-icon>
-						</div>
-
-						<div class="service-content">
-							<h3 class="service-title">Return Policy</h3>
-							<p class="service-desc">Easy &amp; Free Return</p>
-						</div>
-					</a>
-
-					
-				</div>
-		</div>
+		
 		<div class="overlay" data-overlay>
 		</div>
 
-	
-
-		<!--
-    - MODAL
-  -->
-
-		<div class="modal" data-modal>
-			<div class="modal-close-overlay" data-modal-overlay></div>
-
-			<div class="modal-content">
-				<button class="modal-close-btn" data-modal-close>
-					<ion-icon name="close-outline"></ion-icon>
-				</button>
-
-				<div class="newsletter-img">
-					<img
-						src="./assets/images/newsletter.png"
-						alt="subscribe newsletter"
-						width="400"
-						height="400"
-					/>
-				</div>
-
-				<div class="newsletter">
-					<form  id="newsletterForm">
-						<div class="newsletter-header">
-							<h3 class="newsletter-title">Subscribe Newsletter.</h3>
-
-							<p class="newsletter-desc">
-								Subscribe <b>Gift's</b> mailing list to get latest products and discount
-								update.
-							</p>
-						</div>
-
-						<input
-							id="newsletterEmail"
-							type="email"
-							name="newsletterEmail"
-							class="email-field"
-							placeholder="Email Address"
-							required
-						/>
-
-						<button type="submit" class="btn-newsletter">Subscribe</button>
-					</form>
-					
-				</div>
-			</div>
-		</div>
-
-		<!--
-    - NOTIFICATION TOAST
-  -->
-
-		<div class="notification-toast" data-toast>
-			<button class="toast-close-btn" data-toast-close>
-				<ion-icon name="close-outline"></ion-icon>
-			</button>
-
-			<div class="toast-banner">
-				<img
-					src="./assets/images/products/jewellery-1.jpg"
-					alt="Rose Gold Earrings"
-					width="80"
-					height="70"
-				/>
-			</div>
-
-			<div class="toast-detail">
-				<p class="toast-message">Someone in new just bought</p>
-
-				<p class="toast-title">Rose Gold Earrings</p>
-
-				<p class="toast-meta"><time datetime="PT2M">2 Minutes</time> ago</p>
-			</div>
-		</div>
 
 		<!--
     - HEADER
@@ -318,7 +131,8 @@
 					
 
 						<button class="action-btn">
-							<ion-icon name="bag-handle-outline"></ion-icon>
+							<!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
+							<i class="bi bi-bag-plus-fill"></i>
 							<span class="count cartCount2">0</span>
 						</button>
 					</div>
@@ -454,7 +268,8 @@
 			
 
 				<button class="action-btn" data-mobile-menu-open-btn>
-					<ion-icon name="bag-handle-outline"></ion-icon>
+					<!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
+					<i class="bi bi-bag-plus-fill"></i>
 
 					<span class="count cartCount1">0</span>
 					<!-- <ion-icon name="grid-outline"></ion-icon> -->
@@ -690,132 +505,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!--
-      - TESTIMONIALS, CTA & SERVICE
-    -->
-
-			<div>
-				<div class="container">
-					<div class="testimonials-box">
-						<!--
-            - TESTIMONIALS
-          -->
-
-						<div class="testimonial">
-							<h2 class="title">testimonial</h2>
-
-							<div class="testimonial-card">
-								<img
-									src="./assets/images/testimonial-1.jpg"
-									alt="alan doe"
-									class="testimonial-banner"
-									width="80"
-									height="80"
-								/>
-
-								<p class="testimonial-name">Gift  </p>
-
-								<p class="testimonial-title">CEO & Founder Invision</p>
-
-								<img
-									src="./assets/images/icons/quotes.svg"
-									alt="quotation"
-									class="quotation-img"
-									width="26"
-								/>
-
-								<p class="testimonial-desc">
-									At Elvis' Shoes Spar, we believe in the power of shoes. Our mission is to provide high-quality, stylish, and comfortable footwear that empowers you to walk your path with confidence.
-								</p>
-							</div>
-						</div>
-						<!--
-            - CTA
-          -->
-
-						<div class="cta-container">
-							<img
-								src="./assets/images/cta-banner.jpg"
-								alt="summer collection"
-								class="cta-banner"
-							/>
-
-							<a href="#product-grid" class="cta-content">
-								<p class="discount">25% Discount</p>
-
-								<h2 class="cta-title">Shoe collection</h2>
-
-								<p class="cta-text">Starting @ Ksh 1000</p>
-
-								<button class="cta-btn">Shop now</button>
-							</a>
-						</div>
-
-						<!--
-            - SERVICE
-          -->
-
-						<div class="service">
-							<h2 class="title">Our Services</h2>
-
-							<div class="service-container">
-								<a href="#" class="service-item">
-									<div class="service-icon">
-										<ion-icon name="boat-outline"></ion-icon>
-									</div>
-
-									<div class="service-content">
-										<h3 class="service-title">Country Delivery</h3>
-										<p class="service-desc">For Order Over ksh 1000</p>
-									</div>
-								</a>
-
-								<a href="#" class="service-item">
-									<div class="service-icon">
-										<ion-icon name="rocket-outline"></ion-icon>
-									</div>
-
-									<div class="service-content">
-										<h3 class="service-title">Next Day delivery</h3>
-										<p class="service-desc">Nairobi Orders Only</p>
-									</div>
-								</a>
-
-								<a href="#" class="service-item">
-									<div class="service-icon">
-										<ion-icon name="call-outline"></ion-icon>
-									</div>
-
-									<div class="service-content">
-										<h3 class="service-title">Best Online Support</h3>
-										<p class="service-desc">Hours: 8AM - 11PM</p>
-									</div>
-								</a>
-
-								<a href="#" class="service-item">
-									<div class="service-icon">
-										<ion-icon name="arrow-undo-outline"></ion-icon>
-									</div>
-
-									<div class="service-content">
-										<h3 class="service-title">Return Policy</h3>
-										<p class="service-desc">Easy & Free Return</p>
-									</div>
-								</a>
-
-								<a href="#" class="service-item">
-									<div class="service-icon">
-										<ion-icon name="ticket-outline"></ion-icon>
-									</div>
-
-								
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>	
 		</main>
 
 		<!--
